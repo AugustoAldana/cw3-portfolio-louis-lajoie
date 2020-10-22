@@ -1,0 +1,57 @@
+/*version mobile*/
+
+.header-page{
+
+  padding: 0 var(--padding-thin);
+
+  .flex{
+    display: flex; /*il met tout centre, ca marche pas parceque tout est centre donc utiliser flex direction- */
+    flex-direction: column; /*position un au dessous de lautre*/
+    align-items: center; /*justify-content: center - ne marche pas ici parce que on en colonne il a pivote*/
+
+    justify-content: space-between; /*dans media q medium il separe les elements qui sontdans la meme ligne (h2 et nav)*/
+  }
+
+  .logo img{
+    width: 50px;
+    margin-right: 20px; /*el logo est a 20px du h2*/
+  }
+
+  .h2{
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-princ{
+
+    width: 100%; /*apres de faire le display flex et align item il colle, donc on mette cela pour prendre tout l espace*/
+
+    ul{
+
+      padding: 0; /*enlever le paddind fait pour les points*/
+      list-style: none; /*enlever les points*/
+      display: flex; /*afficher les elements de cote */
+      justify-content: space-between; /*mettre distance*/
+
+        li{
+          margin-left: 20px; /*espace entre les items de la liste*/
+        }
+
+    }
+  }
+
+
+}
+
+
+@media screen and (min-width: 768px){
+  .header-page{
+    .flex{
+      flex-direction: row;  /*plus grande de 768px c;est passe dans un seule ligne*/
+    }
+    .nav-princ{
+      width: auto; /*il colle les elements encore une fois a cause align - item*/
+
+    }
+  }
+}
